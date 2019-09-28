@@ -1,0 +1,39 @@
+/*
+INSTRUCTIONS:
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in.
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+*/
+
+
+
+CREATE TABLE Tea_Emporium (ID INTEGER PRIMARY KEY, Product TEXT, SoldQuantity INTEGER, PriceEach REAL, Associate TEXT, Time_of_Day TEXT);
+
+INSERT INTO Tea_Emporium VALUES (1, "Chai", 3, 4.5, "Arushi", "Morning");
+INSERT INTO Tea_Emporium VALUES (2, "Oolong", 1, 3.5, "Arushi", "Morning");
+INSERT INTO Tea_Emporium VALUES (3, "Chai", 2, 4.5, "Arushi", "Morning");
+INSERT INTO Tea_Emporium VALUES (4, "Darjeeling", 2, 5.0, "Sailee", "Evening");
+INSERT INTO Tea_Emporium VALUES (5, "Ginger", 6, 4, "Asmita", "Morning");
+INSERT INTO Tea_Emporium VALUES (6, "Ginger", 1, 4, "Arushi", "Afternoon");
+INSERT INTO Tea_Emporium VALUES (7, "Lemongrass", 4, 4.5, "Arushi", "Afternoon");
+INSERT INTO Tea_Emporium VALUES (8, "Oolong", 1, 3.5, "Sailee", "Afternoon");
+INSERT INTO Tea_Emporium VALUES (9, "Oolong", 2, 3.5, "Sailee", "Evening");
+INSERT INTO Tea_Emporium VALUES (10, "Lemongrass", 9, 4.5, "Asmita", "Evening");
+INSERT INTO Tea_Emporium VALUES (11, "Darjeeling", 1, 5, "Arushi", "Afternoon");
+INSERT INTO Tea_Emporium VALUES (12, "Ginger", 1, 4, "Arushi", "Afternoon");
+INSERT INTO Tea_Emporium VALUES (13, "Chai", 10, 4.5, "Sailee", "Morning");
+INSERT INTO Tea_Emporium VALUES (14, "Oolong", 1, 3.5, "Sailee", "Evening");
+INSERT INTO Tea_Emporium VALUES (15, "Chai", 1, 4.5, "Arushi", "Evening");
+INSERT INTO Tea_Emporium VALUES (16, "Chai", 1, 4.5, "Asmita", "Morning");
+
+
+SELECT * FROM Tea_Emporium;
+SELECT * FROM Tea_Emporium ORDER BY PriceEach DESC;
+
+SELECT Product, SUM (PriceEach) FROM Tea_Emporium GROUP BY Product;
+
+SELECT Product, AVG(PriceEach) FROM Tea_Emporium GROUP BY Product;
+
+SELECT Associate, AVG(PriceEach) FROM Tea_Emporium GROUP BY Associate;
+
+SELECT Time_of_Day, AVG(PriceEach) FROM Tea_Emporium GROUP BY Time_of_Day;
